@@ -1,4 +1,3 @@
-## This snippet is from the Terraform State Management video.
 
 ## state-management.tf
 provider "aws" {
@@ -12,14 +11,13 @@ resource "aws_instance" "myec2" {
   instance_type = "t2.micro"
 }
 
-resource "aws_iam_user" "lb" {
-  name = "loadbalancer"
-  path = "/system/"
+resource "aws_iam_user" "jjtech" {
+  name = "JJtech-user"
 }
 
 terraform {
   backend "s3" {
-    bucket = "kplabs-remote-backends"
+    bucket = "jjtech-remote-backends"
     key    = "demo.tfstate"
     region = "us-east-1"
     access_key = "YOUR-ACCESS-KEY"
